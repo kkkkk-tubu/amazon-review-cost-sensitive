@@ -1,0 +1,54 @@
+=== 长度分桶 x 正例率 ===
+  <=20     n=  15120 ( 4.2%)  pos_rate=0.9054  median_words=18
+  21-50    n= 145425 (39.9%)  pos_rate=0.8635  median_words=33
+  51-100   n= 116474 (32.0%)  pos_rate=0.8281  median_words=70
+  101-200  n=  65582 (18.0%)  pos_rate=0.8169  median_words=131
+  201-400  n=  18529 ( 5.1%)  pos_rate=0.8241  median_words=250
+  >400     n=   3033 ( 0.8%)  pos_rate=0.8223  median_words=494
+  整体 pos_rate=0.8432
+
+=== 极端长度 ===
+  n_words>=1000 的条数: 127  其中正例率 0.835
+  n_words<=10  的条数: 111  其中正例率 0.928
+
+=== dup_group 重复度 ===
+  唯一文本组: 363344
+  仅出现1次的组: 362601 (99.8%)
+  出现>=2次的组: 743  覆盖行数: 1562
+  出现>=5次的组: 4  覆盖行数: 33
+  最大组大小: 13
+  最大组的前2条文本:
+     several years ago i went on a tour of the celestial seasonings tea factory in boulder colorado the guide showed us the b
+     several years ago i went on a tour of the celestial seasonings tea factory in boulder colorado the guide showed us the b
+
+  标签冲突组数: 22  涉及行数: 27
+    dup_group=0764785908
+      Score=4 label=1  does it taste good ? yes if you like the taste and texture of coconut butter you will most cert
+      Score=4 label=1  does it taste good ? yes if you like the taste and texture of coconut butter you will most cert
+    dup_group=1494045596
+      Score=4 label=1  i eat a high protein meal replacement bar every day for breakfast and i have lost several pound
+    dup_group=1fd0ff6f86
+      Score=5 label=1  i think the title explains it we cut it into quarters and use it for rewarding our puppy while 
+
+=== 最高频文本(模板/垃圾评论候选) ===
+  n=   13  several years ago i went on a tour of the celestial seasonings tea factory in boulder colorado the g
+  n=    9  diamond almonds almonds are a good source of magnesium one ounce contain approximately 20 of the rda
+  n=    6  gunpowder tea is green tea most of which comes from a city named pingshui in the eastern chinese pro
+  n=    5  i have been drinking twinings teas for years twinings teas are consistently good each tea bag comes 
+  n=    4  as a classic seattle tea this tea brings back memories of hiding away from the rainy weather sipping
+
+=== 年度正例率 ===
+  2004: n=   431  pos=0.9304
+  2005: n=  1023  pos=0.9130
+  2006: n=  4482  pos=0.8684
+  2007: n= 14869  pos=0.8939
+  2008: n= 21624  pos=0.8888
+  2009: n= 35191  pos=0.8713
+  2010: n= 53848  pos=0.8495
+  2011: n=104333  pos=0.8336
+  2012: n=128208  pos=0.8252
+
+=== 停用词影响 ===
+  含停用词 词数中位数: 57  p95: 215
+  去停用词 词数中位数: 29  p95: 113
+  平均保留比例: 0.520

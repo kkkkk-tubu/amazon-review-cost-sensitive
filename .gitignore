@@ -1,0 +1,17 @@
+# 数据集与中间产物（体积大，且属外部公开数据集，请自行下载）
+Reviews.csv
+database.sqlite
+data/
+splits.csv
+splits_multi.csv
+dist/
+
+# 运行产物
+__pycache__/
+*.pyc
+_tmp/
+reports/_*.txt
+
+# 编辑器
+.idea/
+.vscode/

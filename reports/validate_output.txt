@@ -1,0 +1,42 @@
+tokens cols: ['Id', 'label', 'tokens', 'tokens_nostop', 'tokens_neg', 'n_words', 'dup_group', 'Year', 'label_conflict']
+clean cols: ['Id', 'ProductId', 'UserId', 'ProfileName', 'Score', 'Time', 'Datetime', 'Year', 'HelpfulnessNumerator', 'HelpfulnessDenominator', 'label', 'label_name', 'text_clean', 'summary_clean', 'n_words', 'n_words_nostop', 'dup_group', 'label_conflict']
+
+--- 抽样 3 条比较 ---
+[Score=5 label=pos]
+  text_clean: i have bought several of the vitality canned dog food products and have found them all to be of good quality the product looks more like a stew than a
+  tokens    : i have bought several of the vitality canned dog food products and have found them all to be of good quality the product looks more like a stew than a
+  nostop    : bought several vitality canned dog food products found good quality product looks like stew processed meat smells better labrador 
+  neg       : i have bought several of the vitality canned dog food products and have found them all to be of good quality the product looks mor
+[Score=1 label=neg]
+  text_clean: product arrived labeled as jumbo salted peanuts the peanuts were actually small sized unsalted not sure if this was an error or if the vendor intended
+  tokens    : product arrived labeled as jumbo salted peanuts the peanuts were actually small sized unsalted not sure if this was an error or if the vendor intended
+  nostop    : product arrived labeled jumbo salted peanuts peanuts actually small sized unsalted not sure error vendor intended represent produc
+  neg       : product arrived labeled as jumbo salted peanuts the peanuts were actually small sized unsalted not NEG_sure NEG_if NEG_this was an
+[Score=4 label=pos]
+  text_clean: this is a confection that has been around a few centuries it is a light pillowy citrus gelatin with nuts in this case filberts and it is cut into tiny
+  tokens    : this is a confection that has been around a few centuries it is a light pillowy citrus gelatin with nuts in this case filberts and it is cut into tiny
+  nostop    : confection around centuries light pillowy citrus gelatin nuts case filberts cut tiny squares liberally coated powdered sugar tiny 
+  neg       : this is a confection that has been around a few centuries it is a light pillowy citrus gelatin with nuts in this case filberts and
+
+--- 校验 ---
+text_clean 残留 html 标签: 0
+text_clean 残留 URL     : 0
+text_clean 残留 html实体: 0
+text_clean 含大写       : 0
+text_clean 字母/数字/!? 之外字符的行数: 0
+label 与 Score 一致: True
+
+前5000条 nostop 中含 not/no 的条数: 2974 (否定词应被保留)
+出现 NEG_ 前缀标记的条数: 31604 / 50000
+n_words 最小值: 4  最大值: 1696
+n_words==0 的行数: 0
+
+--- 含 not 的原文截断示例 ---
+  product arrived labeled as jumbo salted peanuts the peanuts were actually small sized unsalted not sure if thi
+  this is a confection that has been around a few centuries it is a light pillowy citrus gelatin with nuts in th
+  i got a wild hair for taffy and ordered this five pound bag the taffy was all very enjoyable with many flavors
+
+--- NEG_ 标记示例 ---
+   product arrived labeled as jumbo salted peanuts the peanuts were actually small sized unsalted not NEG_sure NEG_if NEG_this was an error or if the vendor intend
+   this is a confection that has been around a few centuries it is a light pillowy citrus gelatin with nuts in this case filberts and it is cut into tiny squares a
+   i got a wild hair for taffy and ordered this five pound bag the taffy was all very enjoyable with many flavors watermelon root beer melon peppermint grape etc m
